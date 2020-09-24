@@ -1,0 +1,37 @@
+﻿@page
+@model SomethingModel
+@{
+}
+
+<h1>Something Random</h1>
+
+<p>Generate random name data.</p>
+
+@if (Model == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var something in Model.SomethingList)
+            {
+                <tr>
+                    <td>@something.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button class="btn btn-primary" type="submit">
+        Add Something
+    </button>
+</form>
+
+}
